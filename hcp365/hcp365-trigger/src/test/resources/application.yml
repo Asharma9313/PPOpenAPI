@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    generate-ddl: 'true'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+  datasource:
+    password: watson
+    driver-class-name: org.h2.Driver
+    username: watson
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+appAuthenticationToken: '123456'
+security:
+  token:
+    validateurl: http://dummyurl.pulsepoint.com/validateuser
+  oauth2:
+    resource:
+      token-info-uri: http://lga-portaltest02:8080/RestApi/oauth/check_token
+      id: hcp365reportingapi
+    client:
+      client-secret: cHVsc2Vwb2ludDE=
+      client-id: pulsepoint

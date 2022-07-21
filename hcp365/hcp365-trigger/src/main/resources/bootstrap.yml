@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      password: p3!aB$mI!
+      name: hcp365triggerapi
+      username: admin
+      label: hcp/trigger
+      uri: http://localhost:1114/config-manager
+  config:
+    import: 'optional:configserver:'
+  application:
+    name: hcp365triggerapi
+  profiles:
+    active: dev
+logging:
+  config: ${APP_CONFIG_SERVER}/config-manager/hcp365triggerapi/default/${spring.cloud.config.label}/log4j2.yml

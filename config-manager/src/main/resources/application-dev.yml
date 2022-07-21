@@ -1,0 +1,4 @@
+server:
+  servlet:
+    context-path: /config-manager
+  port: 1114

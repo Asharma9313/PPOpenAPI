@@ -1,0 +1,34 @@
+spring:
+  jpa:
+    generate-ddl: 'true'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+  datasource:
+    password: watson
+    driver-class-name: org.h2.Driver
+    username: watson
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+scheduledReportsQueueProcessCount: '50'
+appAuthenticationToken: '123456789'
+security:
+  token:
+    validateurl: http://dummyurl.pulsepoint.com/validateuser
+  oauth2:
+    resource:
+      token-info-uri: http://lga-portaltest02:8080/RestApi/oauth/check_token
+      id: hcp365reportingapi
+    client:
+      client-secret: cHVsc2Vwb2ludDE=
+      client-id: pulsepoint
+reportingAPIUrl: http://pprptapi.pulsepoint.com/reporting/generatereport
+reportingAPICallBackUrl: http://openapi.pulsepoint.com/OpenAPIAdvertiser/v1.0/life/report/{reportid}/status?token=c055bec380ac4a31bca953ce9cf225af
+
+

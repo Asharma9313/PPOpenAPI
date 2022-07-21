@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-manager
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:/APIConfig/{label}
+        bootstrap: 'true'
+  profiles:
+    active: native, dev
+logging:
+  config: C:/APIConfig/config-manager/log4j2.yml

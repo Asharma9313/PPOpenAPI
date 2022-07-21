@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-manager
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: 'optional:file:///configs'
+        bootstrap: 'true'
+  profiles:
+    active: native

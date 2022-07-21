@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      password: p3!aB$mI!
+      name: journeyaudienceapi
+      username: admin
+      label: journey/audience
+      uri: ${APP_CONFIG_SERVER}/config-manager
+  config:
+    import: 'optional:configserver:'
+  application:
+    name: journeyaudienceapi
+  profiles:
+    active: ${APP_ENV}

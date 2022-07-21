@@ -1,0 +1,23 @@
+reportingAPIUrl: http://pprptapi.pulsepoint.com/reporting/generatereport
+reportingAPICallBackUrl: http://openapi.pulsepoint.com/OpenAPIAdvertiser/v1.0/life/report/{reportid}/status?token=c055bec380ac4a31bca953ce9cf225af
+
+scheduledReportsQueueProcessCount: '50'
+#appAuthenticationToken: '123456789'
+
+spring:
+  cloud:
+    config:
+      password: p3!aB$mI!
+      name: hcp365reportingapi
+      username: admin
+      label: hcp/reporting
+      uri: ${APP_CONFIG_SERVER}/config-manager
+  config:
+    import: 'optional:configserver:'
+  application:
+    name: hcp365reportingapi
+  profiles:
+    active: ${APP_ENV}
+logging:
+  config: ${APP_CONFIG_SERVER}/config-manager/hcp365reportingapi/default/${spring.cloud.config.label}/log4j2.yml
+  
